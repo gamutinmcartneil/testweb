@@ -1,1 +1,28 @@
 =TRIM(MID(SUBSTITUTE($B2," ",REPT(" ",LEN($B2))),(COLUMNS($C2:C2)-1)*LEN($B2)+1,LEN($B2)))
+
+
+Formula to use: 
+
+=TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (2-1)*LEN(A1)+1, LEN(A1))) //3rd
+=TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (4-1)*LEN(A1)+1, LEN(A1))) //3rd
+=TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (6-1)*LEN(A1)+1, LEN(A1))) //3rd
+=TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (8-1)*LEN(A1)+1, LEN(A1))) //3rd
+
+=SUBSTITUTE(D1,",","") //2nd
+
+= RIGHT(D3,LEN(D3)-1) //1st
+
+
+Combination of 3 formula:
+
+=SUBSTITUTE(//3rd,",","")
+
+= RIGHT(//2nd,LEN(//2nd)-1)
+
+example:
+
+= RIGHT(SUBSTITUTE(TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (2-1)*LEN(A1)+1, LEN(A1))),",",""),LEN(SUBSTITUTE(TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (2-1)*LEN(A1)+1, LEN(A1))),",",""))-1)
+
+=RIGHT(SUBSTITUTE(TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (4-1)*LEN(A1)+1, LEN(A1))),",",""),LEN(SUBSTITUTE(TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (4-1)*LEN(A1)+1, LEN(A1))),",",""))-1)
+
+= RIGHT(SUBSTITUTE(TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (8-1)*LEN(A1)+1, LEN(A1))),",",""),LEN(SUBSTITUTE(TRIM(MID(SUBSTITUTE(A1," ",REPT(" ",LEN(A1))), (8-1)*LEN(A1)+1, LEN(A1))),",",""))-1)
